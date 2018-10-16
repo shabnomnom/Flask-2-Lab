@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Madlibs Game >^.^< {% endblock %}
+{% block content %} 
+<h1>Hello, {{person}}! Welcome to our game :) </h1>
+
+<form action = "/madlib" method="GET">
+	
+	Input a person's name:
+	<input type="text" name="name"></input><br>
+	
+	Select a color:
+	<select name = "color" > 
+		<option value = "baby blue"> Baby Blue </option>
+		<option value = "lavender"> Lavender </option>
+		<option value = "dusty pink"> Dusty Pink </option>
+	</select> <br>
+	
+	Pick a noun: <br>
+	<input type="radio" name="noun" value="cup of calming tea">A cup of calming tea <br>
+	<input type="radio" name="noun" value="chocolate-eating dinosaur">A chocolate-eating dinosaur <br>
+	<input type="radio" name="noun" value="chocolate-eating dinosaur">A chocolate-eating dinosaur <br>
+	<input type="radio" name="noun" value="scent of morning dew in a rose garden">The scent of morning dew in a rose garden<br>
+
+	Input an adjective:
+	<input type="text" name="adjective"></input> <br>
+
+	<input type="hidden" name="person" value={{person}}>
+
+	<input type="submit">
+</form>
+{% endblock %} 
