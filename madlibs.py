@@ -42,30 +42,37 @@ def greet_person():
 
 @app.route('/game')
 def show_madlib_form():
-	""" """
-	wants_to_play = int(request.args.get("game"))
-	person = request.args.get("person")
+    """ """
+    wants_to_play = int(request.args.get("game"))
+    person = request.args.get("person")
 
-	if wants_to_play:
+    if wants_to_play:
         return render_template("game.html", person=person)
+    else:
+        return render_template("goodbye.html", person=person)
 
-	return render_template("goodbye.html", person=person)
-
-@app.route('/madlib')
+@app.route('/madlib', methods=["POST"])
 def show_madlib():
     """ """
-    person = request.args.get("person")
-    name = request.args.get("name")
-    color = request.args.get("color")
-    noun = request.args.get("noun")
-    adjective = request.args.get("adjective")
+    person = request.form.get("person")
+    name = request.form.get("name")
+    color = request.form.get("color")
+    noun = request.form.get("noun")
+    adjective = request.form.get("adjective")
+    keylist = request.form.keys()
+    heroes = []
+    for key in keylist:
+        if key.startswith("hero"):
+            heroes.append(request.form.get(key))
+
 
     return render_template("madlib.html",
                            person=person,
                            name=name,
                            color=color,
                            noun=noun,
-                           adjective=adjective)
+                           adjective=adjective,
+                           heroes=heroes)
 
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also

@@ -6,5 +6,19 @@
 
 There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
 When {{ name }} went to pick it up, it burst into flames in a totally
-{{ adjective }} way.
+{{ adjective }} way. Fortunately, you were there. You called the Paw Patrol and they said,
+
+{% if heroes|length < 1 %}
+
+"Sorry! We're busy, but you can save the day!""
+
+{% elif heroes|length == 1 %}
+
+"{{heroes[0]}} is on the way"
+
+{% else %}
+"{% for hero in heroes %} {{hero}} {% endfor %} are on the way"
+
+ {% endif %}
+
 {% endblock %}

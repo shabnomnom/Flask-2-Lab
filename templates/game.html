@@ -3,7 +3,7 @@
 {% block content %} 
 <h1>Hello, {{person}}! Welcome to our game :) </h1>
 
-<form action = "/madlib" method="GET">
+<form action = "/madlib" method="POST">
 	
 	Input a person's name:
 	<input type="text" name="name"></input><br>
@@ -18,11 +18,21 @@
 	Pick a noun: <br>
 	<input type="radio" name="noun" value="cup of calming tea">A cup of calming tea <br>
 	<input type="radio" name="noun" value="chocolate-eating dinosaur">A chocolate-eating dinosaur <br>
-	<input type="radio" name="noun" value="chocolate-eating dinosaur">A chocolate-eating dinosaur <br>
+	<input type="radio" name="noun" value="forbidden forest">A forbidden forest <br>
 	<input type="radio" name="noun" value="scent of morning dew in a rose garden">The scent of morning dew in a rose garden<br>
 
 	Input an adjective:
 	<input type="text" name="adjective"></input> <br>
+
+	Select your heroes: <br>
+	<input type="checkbox" name = "hero1" value = "Skye the Flying Dog">Skye the Flying Dog<br>
+	<input type="checkbox" name = "hero2" value = "Buddha the Lazy Cat">Buddha the Lazy Cat<br>
+	<input type="checkbox" name = "hero3" value = "Marshall the Firefighting Dog">Marshall the Firefighting Dog<br>
+	<input type="checkbox" name = "hero4" value = "Bandit the Racoon Family Leader">Bandit the Racoon Family Leader<br>
+	<input type="checkbox" name = "hero5" value = "Chase the Police Dog">Chase the Police Dog<br>
+	<input type="checkbox" name = "hero6" value = "Everest the Mountain Dog">Everest the Mountain Dog<br>
+	<input type="checkbox" name = "hero7" value = "Rocky the Recycling Dog">Rocky the Recycling Dog<br>
+
 
 	<input type="hidden" name="person" value={{person}}>
 
